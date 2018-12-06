@@ -3,25 +3,20 @@
 
 using namespace std;
 
-void dec2Bin(long long n)
-{
+void dec2Bin(long long n){
     int binaryNum[1000];
     int i = 0;
-    while (n > 0)
-    {
+    
+    while (n > 0){
         binaryNum[i] = n % 2;
         n = n / 2;
         i++;
     }
-    for (int j = i - 1; j >= 0; j--)
-        cout << binaryNum[j];
+    for (int j = i - 1; j >= 0; j--)cout << binaryNum[j];
 }
-
-void dec2Oct(long long n)
-{
+void dec2Oct(long long n){
     long long rem, i = 1, oct = 0;
-    while (n != 0)
-    {
+    while (n != 0){
         rem = n % 8;
         n /= 8;
         oct += rem * i;
@@ -29,9 +24,7 @@ void dec2Oct(long long n)
     }
     cout<< oct;
 }
-
-void dec2hex(int value)
-{
+void dec2hex(int value){
     if (value == 0)
         return;
 
@@ -43,19 +36,12 @@ void dec2hex(int value)
     else
         cout << rem;
 }
-
-int main()
-{
+int main(){
     long long val;
-
-    while(cin >> val)
-    {
-    dec2Bin(val);
-    cout << " ";
-    dec2Oct(val);
-    cout << " ";
-    dec2hex(val);
-    cout <<endl;
+    while(cin >> val){
+        dec2Bin(val);cout << " ";
+        dec2Oct(val);cout << " ";
+        dec2hex(val);cout <<endl;
     }
     return 0;
 }
